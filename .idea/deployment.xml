@@ -7,6 +7,21 @@
           <mappings>
             <mapping deploy="\" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/PHPTest.iml" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="landmarkcontrol.000webhost.com">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/public_html/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/PHPTest.iml" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>

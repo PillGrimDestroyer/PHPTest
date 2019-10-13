@@ -25,7 +25,7 @@ function getFeeds($url)
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
 
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -39,7 +39,7 @@ function getFeeds($url)
 if (isset($_COOKIE['user_id'])) {
     getFeeds("http://news.yandex.ru/gadgets.rss");
 } else {
-    echo "<a href='login.php' style='font-size: 21pt'>Авторизоваться</a>";
+    echo "<a href='/pages/login.php' style='font-size: 21pt'>Авторизоваться</a>";
 }
 ?>
 </body>

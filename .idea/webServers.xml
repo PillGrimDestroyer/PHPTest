@@ -5,6 +5,14 @@
       <webServer id="7a048745-1339-488b-bd30-d02dd462c92b" name="Local" url="http://localhost/test">
         <fileTransfer port="0" mountedRoot="D:\Open server\OSPanel\domains\localhost\test" accessType="MOUNT" />
       </webServer>
+      <webServer id="b35293df-9d39-4f52-bdff-cd804cf0e1e0" name="landmarkcontrol.000webhost.com" url="http://files.000webhost.com">
+        <fileTransfer host="files.000webhost.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

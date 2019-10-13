@@ -1,26 +1,34 @@
 <?php
-$dbc = mysqli_connect('localhost','root','','test');
+if ($_SERVER["REMOTE_ADDR"] == "127.0.0.1") {
+    $DBHost = 'localhost';
+    $DBUser = 'root';
+    $DBPass = '';
+    $DBName = 'test';
+} else {
+    $DBHost = 'localhost';
+    $DBUser = 'id11213392_rdmteaminc';
+    $DBPass = 'Rdm_Team6884';
+    $DBName = 'id11213392_test';
+}
 
-if (isset($_POST['submit']))
-{
+$dbc = mysqli_connect($DBHost, $DBUser, $DBPass, $DBName);
+
+if (isset($_POST['submit'])) {
     $user_name = mysqli_real_escape_string($dbc, trim($_POST['email']));
     $user_pass = mysqli_real_escape_string($dbc, trim($_POST['pass']));
 
     $query = "SELECT userId, name FROM `users` WHERE name = '$user_name' AND password = SHA('$user_pass')";
     $data = mysqli_query($dbc, $query);
 
-    if (mysqli_num_rows($data) == 1)
-    {
-        $home_url = 'http://' . $_SERVER['HTTP_HOST'] . '/test/pages/index.php';
+    if (mysqli_num_rows($data) == 1) {
+        $home_url = 'http://' . $_SERVER['HTTP_HOST'] . '/pages/index.php';
         $row = mysqli_fetch_assoc($data);
 
-        setcookie('user_id', $row['userId'], time() + (60*60*24));
-        setcookie('user_name', $row['name'], time() + (60*60*24));
+        setcookie('user_id', $row['userId'], time() + (60 * 60 * 24));
+        setcookie('user_name', $row['name'], time() + (60 * 60 * 24));
 
         header('Location: ' . $home_url);
-    }
-    else
-    {
+    } else {
         echo 'Не верный логин или пароль';
     }
 }
@@ -55,7 +63,7 @@ if (isset($_POST['submit']))
 						<i class="zmdi zmdi-brightness-2"></i>
 					</span>
 
-                <div class="wrap-input100 validate-input" data-validate = "Правильный email адрес: a@b.c">
+                <div class="wrap-input100 validate-input" data-validate="Правильный email адрес: a@b.c">
                     <input class="input100" type="text" name="email">
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
