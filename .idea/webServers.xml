@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7a048745-1339-488b-bd30-d02dd462c92b" name="Local" url="http://localhost/test">
+        <fileTransfer port="0" mountedRoot="D:\Open server\OSPanel\domains\localhost\test" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
